@@ -9,13 +9,12 @@
 - Root
   - [Account]Management
   - [OU]Core
-    - [Account]Log-Archive(省略)
-    - [Account]Security
+    - [Account]Security( + Log-Archive + Audit)
     - [Account]Jump
   - [OU]Workloads
-    - [Account]Workload-a
-    - [Account]Workload-b
-    - [Account]Workload-c
+    - [Account]Production
+    - [Account]Development
+    - [Account]Staging
 
 # tfstate
 
@@ -52,10 +51,10 @@ $ aws-vault exec security -- aws s3api create-bucket \
   LocationConstraint=ap-northeast-1
 ```
 
-## AWSアカウント(Workload-a)
+## AWSアカウント(production/development/staging)
 
 ```
-$ aws-vault exec workload-a -- aws s3api create-bucket \
+$ aws-vault exec [production/development/staging] -- aws s3api create-bucket \
   --bucket tfstate-ahno1ded \
   --region ap-northeast-1 \
   --create-bucket-configuration \
