@@ -1,6 +1,6 @@
 # AWS CloudTrailの委任がTerraformで出来ないので、CLIで対応
 # https://github.com/hashicorp/terraform-provider-aws/issues/29179
-# aws-vault exec management -- aws organizations register-delegated-administrator --account-id 107869932440 --service-principal cloudtrail.amazonaws.com
+# aws-vault exec management -- aws organizations register-delegated-administrator --account-id 222222222222 --service-principal cloudtrail.amazonaws.com
 
 resource "aws_cloudtrail" "cloudtrail" {
   name           = "cloudtrail"

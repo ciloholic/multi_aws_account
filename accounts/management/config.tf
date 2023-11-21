@@ -1,7 +1,7 @@
 # AWS Confignの委任がTerraformで出来ないので、CLIで対応
-# aws-vault exec management -- aws organizations register-delegated-administrator --account-id 107869932440 --service-principal config.amazonaws.com
-# aws-vault exec management -- aws organizations register-delegated-administrator --account-id 107869932440 --service-principal config-multiaccountsetup.amazonaws.com
-# aws-vault exec management -- aws organizations list-delegated-services-for-account --account-id 107869932440 --output text | grep config
+# aws-vault exec management -- aws organizations register-delegated-administrator --account-id 222222222222 --service-principal config.amazonaws.com
+# aws-vault exec management -- aws organizations register-delegated-administrator --account-id 222222222222 --service-principal config-multiaccountsetup.amazonaws.com
+# aws-vault exec management -- aws organizations list-delegated-services-for-account --account-id 222222222222 --output text | grep config
 
 resource "aws_config_configuration_recorder" "config_recorder" {
   name     = "config-recorder"
