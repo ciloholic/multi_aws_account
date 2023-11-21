@@ -23,14 +23,6 @@ resource "aws_organizations_organizational_unit" "workloads" {
   parent_id = aws_organizations_organization.org.roots[0].id
 }
 
-# Core > Log-Archive
-# resource "aws_organizations_account" "log_archive" {
-#   name              = "Log-Archive"
-#   email             = "test+log-archive@example.co.jp"
-#   parent_id         = aws_organizations_organizational_unit.core.id
-#   close_on_deletion = true
-# }
-
 # Core > Security
 resource "aws_organizations_account" "security" {
   name              = "Security"
@@ -47,10 +39,10 @@ resource "aws_organizations_account" "jump" {
   close_on_deletion = true
 }
 
-# Workloads > Workload-a
-# resource "aws_organizations_account" "workload_a" {
-#   name              = "Workload-a"
-#   email             = "test+workload-a@example.co.jp"
+# Workloads > Production
+# resource "aws_organizations_account" "production" {
+#   name              = "Production"
+#   email             = "test+production@example.co.jp"
 #   parent_id         = aws_organizations_organizational_unit.workloads.id
 #   close_on_deletion = true
 # }
